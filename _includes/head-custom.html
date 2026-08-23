@@ -53,4 +53,15 @@ section td:first-child{white-space:nowrap}
 @media print, screen and (max-width: 960px){
   header ul.site-nav{position:static;right:auto;top:auto}
 }
+/* 変更履歴の箇条書き。**Markdown は行内の改行を空白に潰す**（kramdown の既定）ので、
+   「・」の行が繋がって1つの段落になっていた。<br> を並べるより pre-wrap のほうが、
+   選択してコピーしたときに改行がそのまま入る。Play Console に貼る用途なので、
+   見た目より「コピーした結果」を優先する。
+   フォントは本文のまま（pre ではなく div にしているのはそのため）。 */
+.paste{
+  white-space:pre-wrap;      /* 改行はそのまま、長い行だけ折り返す */
+  word-break:break-word;     /* 狭い画面で横スクロールにしない */
+  margin:0 0 20px;
+}
+
 </style>
