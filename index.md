@@ -87,6 +87,8 @@ Android 6.0 以降で動きます。
 
 ![チャプター](images/chapters.webp)
 
+<div class="short"><iframe src="https://www.youtube-nocookie.com/embed/EnfwfwGGKHY" title="らじぽけ機能紹介① 2時間の番組から、聴きたい5分だけ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
 録音した番組の音声を調べ、**無音のところ**（CM の切れ目など）と**オンエア曲の頭**で区切って、章として並べます。聴きたいコーナーから始められます。
 
 プランを下げても、作成済みのチャプターは消えません。プレミアムに戻すと、そのまま表示されます。

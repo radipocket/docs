@@ -15,6 +15,24 @@ img[src*="images/"]{
   border-radius:8px;
 }
 
+/* YouTube ショート（縦長 9:16）。**画面写真と同じ 270px に収める。**
+   幅いっぱいに広げると、隣に並ぶ画面写真より 2.6 倍大きくなって釣り合わない。
+   上の img[src*="images/"] は iframe には当たらないので、別に書く。
+   aspect-ratio で先に場所を取り、読み込み中に本文が飛ぶのを防ぐ（画像と同じ考え方）。 */
+.short{
+  width:100%;
+  max-width:270px;
+  aspect-ratio:9/16;
+  margin:0 auto 12px;
+}
+.short iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:8px;
+}
+
 /* 料金の表は4列ある。狭い画面では、まず折り返して収める。
    nowrap にすると横スクロールになり、いちばん右の「プレミアム」が
    隠れてしまう。料金表で上位プランが見えないのは困る。
