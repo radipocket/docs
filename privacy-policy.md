@@ -199,4 +199,4 @@ Google における情報の取り扱いについては、以下をご確認く�
 
 ---
 
-[ホーム](index.html) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
+[ホーム](index.html) ・ [使い方](manual.html) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
