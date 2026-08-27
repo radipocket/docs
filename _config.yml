@@ -25,6 +25,8 @@ exclude:
 nav:
   - title: 紹介
     url: /
+  - title: 使い方
+    url: /manual.html
   - title: テスト参加
     url: /test.html
   - title: 開発ロードマップ

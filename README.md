@@ -9,6 +9,11 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 | `privacy-policy.md` | https://radipocket.github.io/docs/privacy-policy.html |
 | `roadmap.md` | https://radipocket.github.io/docs/roadmap.html |
 | `changelog.md` | https://radipocket.github.io/docs/changelog.html |
+| `manual.md` | https://radipocket.github.io/docs/manual.html |
+| `manual-listen.md` | https://radipocket.github.io/docs/manual-listen.html |
+| `manual-record.md` | https://radipocket.github.io/docs/manual-record.html |
+| `manual-use.md` | https://radipocket.github.io/docs/manual-use.html |
+| `manual-faq.md` | https://radipocket.github.io/docs/manual-faq.html |
 
 ## 更新のしかた
 
