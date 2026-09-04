@@ -16,11 +16,23 @@
 
 .manual-body{
   margin:0;
+  padding:0;                /* テーマの body{padding:50px} を打ち消す */
   background:var(--bg);
   color:var(--ink);
   font-size:15px;
   line-height:1.8;
 }
+
+/* テーマ（jekyll-theme-minimal）は header と footer を
+   **左に270pxで固定する**前提で書かれている。使い方ページは左右2段の別の骨格を
+   持つので、要素セレクタで当たってくるぶんをここで打ち消す。
+   打ち消し忘れると、上の帯と下の帯が左端に細長く固定され、本文が右に潰れる。 */
+.manual-body .mheader,
+.manual-body .mfooter{
+  width:auto; float:none; padding-right:0;
+}
+.manual-body .mheader{position:sticky; top:0}
+.manual-body .mfooter{position:static; bottom:auto}
 
 /* 画面外に置いて、Tab で最初に拾えるようにする */
 .skip{position:absolute;left:-9999px}
