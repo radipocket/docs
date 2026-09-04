@@ -1,0 +1,94 @@
+<!--
+  使い方ページ専用のレイアウト。
+
+  既定の default.html はテーマ（jekyll-theme-minimal）の写しで、本文が 500px 幅に
+  収まる読み物向けの作りになっている。使い方は**引きながら読むもの**なので、
+  左に目次、右に本文という別の骨格を与える。
+
+  テーマの CSS はそのまま読み込む——見出し・本文・表の見た目を他のページと
+  そろえるため。骨格に関わるところだけ、このファイルの中で上書きする。
+
+  目次は**本文の見出しから組み立てる**（手で書かない）。二重に持つと必ずずれる。
+-->
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {%- assign og_title = page.title | default: site.title -%}
+    {%- assign og_desc = page.description | default: site.description -%}
+    {%- assign og_image = page.image | default: site.og_image -%}
+    <title>{% if og_title == site.title %}{{ site.title }}{% else %}{{ og_title }} | {{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ og_desc | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+    <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="{{ og_title | escape }}">
+    <meta property="og:description" content="{{ og_desc | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ og_image | absolute_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:alt" content="{{ site.og_image_alt | escape }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ og_title | escape }}">
+    <meta name="twitter:description" content="{{ og_desc | escape }}">
+    <meta name="twitter:image" content="{{ og_image | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ site.og_image_alt | escape }}">
+{%- if site.twitter_site %}
+    <meta name="twitter:site" content="{{ site.twitter_site }}">
+{%- endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/manual/manual.css' | relative_url }}">
+  </head>
+  <body class="manual-body">
+
+    <a class="skip" href="#main">本文へ</a>
+
+    <header class="mheader">
+      <div class="mheader-in">
+        <a class="mheader-title" href="{{ "/" | absolute_url }}">らじぽけ <span>Radio Pocket</span></a>
+        <nav class="mheader-nav">
+          {% for item in site.nav %}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="current"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <button class="side-toggle" id="sideToggle" aria-expanded="false" aria-controls="side">
+      目次と検索
+    </button>
+
+    <div class="mshell">
+      <aside class="mside" id="side">
+        <div class="msearch">
+          <input type="search" id="q" placeholder="使い方を検索" autocomplete="off"
+                 aria-label="このページの中を検索">
+          <p class="msearch-hit" id="qhit" hidden></p>
+        </div>
+        <nav class="mnav" id="nav" aria-label="目次"></nav>
+      </aside>
+
+      <main class="mmain" id="main">
+        {{ content }}
+      </main>
+    </div>
+
+    <footer class="mfooter">
+      <p><a href="{{ "/" | absolute_url }}">らじぽけ</a> ・
+         <a href="{{ '/test.html' | relative_url }}">クローズドテスト</a> ・
+         <a href="{{ '/privacy-policy.html' | relative_url }}">プライバシーポリシー</a> ・
+         <a href="{{ '/roadmap.html' | relative_url }}">開発ロードマップ</a> ・
+         <a href="{{ '/changelog.html' | relative_url }}">変更履歴</a></p>
+    </footer>
+
+    <script src="{{ '/manual/manual.js' | relative_url }}"></script>
+  </body>
+</html>
