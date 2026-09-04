@@ -9,11 +9,32 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 | `privacy-policy.md` | https://radipocket.github.io/docs/privacy-policy.html |
 | `roadmap.md` | https://radipocket.github.io/docs/roadmap.html |
 | `changelog.md` | https://radipocket.github.io/docs/changelog.html |
-| `manual.md` | https://radipocket.github.io/docs/manual.html |
-| `manual-listen.md` | https://radipocket.github.io/docs/manual-listen.html |
-| `manual-record.md` | https://radipocket.github.io/docs/manual-record.html |
-| `manual-use.md` | https://radipocket.github.io/docs/manual-use.html |
-| `manual-faq.md` | https://radipocket.github.io/docs/manual-faq.html |
+| `manual.html` | https://radipocket.github.io/docs/manual.html |
+| `manual-listen.md` | https://radipocket.github.io/docs/manual-listen.html （案内だけ） |
+| `manual-record.md` | https://radipocket.github.io/docs/manual-record.html （案内だけ） |
+| `manual-use.md` | https://radipocket.github.io/docs/manual-use.html （案内だけ） |
+| `manual-faq.md` | https://radipocket.github.io/docs/manual-faq.html （案内だけ） |
+
+## 使い方のページ
+
+使い方は **`manual.html` の1ページ**にまとまっています。他のページと骨格が違うので、
+専用のものを持っています。
+
+| 置き場 | 何か |
+|---|---|
+| `manual.html` | 本文。**Markdown ではなく HTML**（表・動画・アコーディオンを組むため） |
+| `_layouts/manual.html` | 左に目次・右に本文の骨格。目次は**本文の見出しから組み立てる** |
+| `manual/manual.css` | 使い方ページだけの見た目 |
+| `manual/manual.js` | 目次の組み立て・現在地・ページ内検索。**サーバーは使わない** |
+| `manual/img/` | 画面写真（webp・幅540） |
+| `manual/video/` | 操作の動画（mp4・音声なし・`<video autoplay muted loop playsinline>`） |
+
+`manual-listen` / `manual-record` / `manual-use` / `manual-faq` は、
+**昔の URL を切らさないための案内ページ**です。中身は `manual.html` の見出しへ送るだけで、
+本文は持っていません。
+
+見出しを増やすと目次にも自動で載ります。**見出しには `id` を手で付けてください**
+（プランの札を含む見出しがあるため、自動生成に任せると id がぶれます）。
 
 ## 更新のしかた
 
