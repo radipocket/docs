@@ -85,13 +85,13 @@ Android 6.0 以降で動きます。
 
 ### 頭出しで聴く（プレミアム）
 
-![チャプター](images/chapters.webp)
+![頭出し](images/chapters.webp)
 
 <div class="short"><iframe src="https://www.youtube-nocookie.com/embed/EnfwfwGGKHY" title="らじぽけ機能紹介① 2時間の番組から、聴きたい5分だけ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
 録音した番組の音声を調べ、**無音のところ**（CM の切れ目など）と**オンエア曲の頭**で区切って、章として並べます。聴きたいコーナーから始められます。
 
-プランを下げても、作成済みのチャプターは消えません。プレミアムに戻すと、そのまま表示されます。
+プランを下げても、作成済みの頭出しは消えません。プレミアムに戻すと、そのまま表示されます。
 
 **オンエア曲の表示は、どのプランでもお使いいただけます。** 放送中にかかった曲を、曲名と演奏者つきで一覧できます。気に入った曲はお気に入りに残せます。その曲を頭出しの目印として使えるようになるのが、プレミアムです。
 
@@ -127,7 +127,7 @@ Android 6.0 以降で動きます。
 | 再生速度 | 1倍のみ | 6段階 | 6段階 |
 | ブックマーク | − | ○ | ○ |
 | 自動録音 | − | − | ○ |
-| チャプター | − | − | ○ |
+| 頭出し | − | − | ○ |
 | ラジオで目覚まし | − | − | ○ |
 | radiko プレミアム連携 | ○ | ○ | ○ |
 
