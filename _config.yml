@@ -17,8 +17,10 @@ og_image_alt: らじぽけの画面。左から、聴く・録る・あとで聴
 twitter_site: "@radiopocketjp"
 
 # ドキュメント以外は公開物に含めない。
+# dev/ は開発用のメモ置き場。**利用者向けページとして公開しない。**
 exclude:
   - README.md
+  - dev
 
 # 左ペインのメニュー。_layouts/default.html がここを読んで並べる。
 # URL は拡張子まで書く（Markdown を .html に変換して公開しているため）。
