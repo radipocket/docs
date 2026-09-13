@@ -126,19 +126,66 @@ Firebase の集計単位はアプリインスタンスIDです。**同じ人が�
 **同じ人の2台目も別**です。以下のクエリで「人」と書いているのは、正確には「端末（アプリ
 インスタンス）」です。
 
-### **`purchase_completed` は購入の回数ではありません**
+### **`purchase_completed` の意味は versionCode 533 で変わります**
 
-**これはコードを読んで分かった、集計に直接効く落とし穴です。**
+**532 までは購入の回数ではありません。** コードを読んで分かった、集計に直接効く落とし穴です。
 
-`purchase_completed` は `BillingRepository.applyPurchases()` から出ますが、そこは
-**`MainActivity.onResume()` のたびに走ります**（解約をアプリの外でされたときに気づくため）。
-つまり**有料プランを持っている人がアプリを前面に出すたびに1件**出ます。
+| 版 | `purchase_completed` が意味するもの |
+|---|---|
+| **〜532** | **有料プランを持っている人がアプリを前面に出した回数。** `applyPurchases()` が `MainActivity.onResume()` のたびに走り、そこで無条件に送っていたため |
+| **533〜** | **新規の購入が成立した回数。** 承認前（`isAcknowledged` が false）の購入を初めて見たときだけ1件（本体 PR #308） |
 
-- `COUNT(*)` … 「有料の人がアプリを開いた回数」に近いもの。**購入数ではありません**
-- `COUNT(DISTINCT user_pseudo_id)` … 期間中に有料プランを持っていた端末数。**こちらを使う**
+**2026-09-13 から 533 が行き渡るまでの間、BigQuery には両方が混ざります。** 消せません。
 
-「新しく買った」に近いのは `purchase_started` のほうです（購入の手続きを始めたとき1回）。
-ただしこちらは失敗も含みます。
+#### 混ざったぶんの分け方
+
+**`app_info.version` にアプリのバージョン名が入ります。** らじぽけの versionName は
+`Ver 1.4.0 532` の形（`app/build.gradle.kts` の `displayVersionName`。`aapt2 dump badging` でも
+`versionName='Ver 1.4.0 532'` を確認済み）なので、**末尾の数字が versionCode** です。
+
+```sql
+-- purchase_completed を、送った版で分ける
+SELECT
+  SAFE_CAST(REGEXP_EXTRACT(app_info.version, r'(\d+)$') AS INT64) AS version_code,
+  app_info.version,
+  COUNT(*)                       AS events,
+  COUNT(DISTINCT user_pseudo_id) AS devices
+FROM `radipocket.analytics_<プロパティID>.events_*`
+WHERE REGEXP_CONTAINS(_TABLE_SUFFIX, r'^\d{8}$')
+  AND _TABLE_SUFFIX >= '20260913'
+  AND event_name = 'purchase_completed'
+GROUP BY version_code, app_info.version
+ORDER BY version_code
+```
+
+**`app_info.version` に versionName が入ることは、実データで確かめていません**（テーブルが
+まだ無いため）。**最初にこのクエリを流して確かめてください。** 期待どおりでなければ、
+`platform` や `app_info` の他の列を見ることになります。
+
+**533 以降に絞るなら**、各クエリの `WHERE` に次を足します。
+
+```sql
+AND SAFE_CAST(REGEXP_EXTRACT(app_info.version, r'(\d+)$') AS INT64) >= 533
+```
+
+#### **版をまたいで数えられる読み方はありません**
+
+数え方を変えれば揃う、という話ではありません。**数えている対象そのものが違います。**
+
+| | 〜532 | 533〜 |
+|---|---|---|
+| `COUNT(*)` | 有料の人が前面に出した回数 | **新規の購入の回数** |
+| `COUNT(DISTINCT user_pseudo_id)` | **期間中に有料プランを持っていた端末数** | **期間中に新しく買った端末数** |
+
+**533 以降、「いま何人が有料か」は `purchase_completed` からは出せません。** 前からの契約者は
+イベントを出さなくなるからです。**その数字は Play Console で見てください** ——
+分析のイベントで代用しようとすると、また同じ間違いをします。
+
+逆に **533 以降は「期間中に買った端末数」が素直に出ます。** 532 まではそれが出せませんでした。
+
+「購入の手続きを始めた回数」を見たいなら `purchase_started` です（購入ボタンを押したとき1回）。
+**こちらは 532 以前から同じ意味**で、`onResume` を通りません。失敗したぶんも含みます。
+**版をまたいで比べられるのは、いまのところこれだけです。**
 
 ---
 
@@ -404,8 +451,10 @@ ORDER BY segment
 **この5番は、いちばん慎重に読む必要があります。**
 
 1. **`had_paid_plan` は「期間中に有料プランを持っていた端末」であって、「期間中に買った端末」
-   ではありません。** 上の「共通の注意」のとおり、`purchase_completed` は前面に戻るたびに
-   出ます。**前から加入している人も 1 と数えられます**
+   ではありません。** 532 までは `purchase_completed` が前面に戻るたびに出ますし、533 以降でも
+   **前から加入している人はそもそもイベントを出さなくなる**ので、どちらの版でも
+   「買った端末」にはなりません。**533 以降で「期間中に買った端末」を数えたいなら、
+   `purchase_completed` の件数をそのまま使えます**（1件＝1つの新規購入）
 2. **`coupon_campaign` が NULL でも「クーポンを使ったことが無い」とは限りません。**
    2026-08-28 より前に使った端末には付いていません
 3. **クーポンでプランが有効な間は、買う理由がありません。** クーポンが切れたあとに買うか
@@ -462,4 +511,9 @@ WHERE d.coupon_ended = 1
 2. クエリ1を流して、**`result` の値が5種類に収まっているか**を見る。想定外の値があれば実装とずれている
 3. クエリ4を流して、**`coupon_active` が NULL の行がどれだけあるか**を見る。532 が行き渡るまでは NULL が多いのが正常
 4. クエリ5の `had_paid_plan_devices` と、Play Console の実際の加入者数を突き合わせる。
-   **大きくずれていたら、上の「`purchase_completed` は購入の回数ではない」が効いています**
+   **大きくずれていたら、上の「532 までは購入の回数ではない」が効いています**
+5. **`app_info.version` に versionName（`Ver 1.4.0 532` の形）が入るか**を確かめる。
+   入っていれば、修正前後を版で切り分けられる
+6. 533 が行き渡ったあと、**定期購入の更新で `purchase_completed` が出ていないか**を見る。
+   更新のたびに承認を求められないという理解で作ってあるが、**実際の課金でしか確かめられない**。
+   加入者数より多く出ていたら、更新も数えている
