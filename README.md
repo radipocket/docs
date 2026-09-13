@@ -15,6 +15,15 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 | `manual-use.md` | https://radipocket.github.io/docs/manual-use.html （案内だけ） |
 | `manual-faq.md` | https://radipocket.github.io/docs/manual-faq.html （案内だけ） |
 
+## 開発用のメモ（公開しません）
+
+`dev/` は `_config.yml` の `exclude` に入れてあり、**GitHub Pages には出ません。**
+このリポジトリを開いた人だけが読むものです。
+
+| ファイル | 何か |
+|---|---|
+| `dev/bigquery-coupon-queries.md` | クーポン分析の SQL（BigQuery）。イベント名・パラメータは本体の実装から写したもの |
+
 ## 使い方のページ
 
 使い方は **`manual.html` の1ページ**にまとまっています。他のページと骨格が違うので、
