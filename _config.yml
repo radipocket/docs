@@ -14,7 +14,26 @@ baseurl: /docs
 # ファイル名を英数字にしてあるのは、SNS の取得側が日本語のURLを取りこぼすことがあるため。
 og_image: /images/ogp-1200x675.png
 og_image_alt: らじぽけの画面。左から、聴く・録る・あとで聴く。
-twitter_site: "@radiopocketjp"
+twitter_site: "@kuroneko_fukuya"
+
+# 開発者（黒猫福家本舗）の連絡先。**ここだけに書く。**
+# フッター（_layouts/default.html と _layouts/manual.html）がこれを読んで、
+# 全ページの下に同じものを出す。ページ本文の「お問い合わせ」も同じ値を書くが、
+# あちらは Markdown なので手で合わせること（変えるときは両方）。
+#
+# 2026-09-16 に「らじぽけ開発チーム」から変更した。連絡先もアプリ名に紐づいた
+# ものをやめ、開発者そのものの窓口に寄せている。
+# 旧: radiopocket.jp@gmail.com / @radiopocketjp / note.com/radiopocket
+developer:
+  name: 黒猫福家本舗
+  mail: kuroneko.fukuya@gmail.com
+  socials:
+    - title: YouTube
+      url: https://www.youtube.com/@kuronekofukuyahonpo
+    - title: X
+      url: https://x.com/kuroneko_fukuya
+    - title: note
+      url: https://note.com/kuroneko_fukuya
 
 # ドキュメント以外は公開物に含めない。
 # dev/ は開発用のメモ置き場。**利用者向けページとして公開しない。**

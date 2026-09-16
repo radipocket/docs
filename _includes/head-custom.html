@@ -82,4 +82,19 @@ section td:first-child{white-space:nowrap}
   margin:0 0 20px;
 }
 
+/* フッターの連絡先。左ペインは 250px しかないので、**行をつめて小さく**出す。
+   本文より目立たせない——読みに来た人の邪魔をせず、探せばある、くらいでよい。 */
+.site-contact{
+  margin:16px 0 0;
+  font-size:12px;
+  line-height:1.7;
+  word-break:break-all;      /* 狭い画面でメールアドレスがはみ出さないように */
+}
+.site-contact strong{font-weight:700}
+
+/* 使い方ページのフッターは横1本。こちらは中央に寄せる。 */
+.mfooter .site-contact{
+  word-break:normal;
+  margin-top:8px;
+}
 </style>
