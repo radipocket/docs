@@ -92,11 +92,12 @@ description: らじぽけのクローズドテストのご案内です。テス�
 
 お問い合わせ、および不具合のご報告は、こちらまでどうぞ。
 
-**らじぽけ開発チーム**
+**黒猫福家本舗**
 
-- メール: radiopocket.jp@gmail.com
-- X: https://x.com/radiopocketjp
-- note: https://note.com/radiopocket
+- メール: [kuroneko.fukuya@gmail.com](mailto:kuroneko.fukuya@gmail.com)
+- YouTube: [@kuronekofukuyahonpo](https://www.youtube.com/@kuronekofukuyahonpo)
+- X: [@kuroneko_fukuya](https://x.com/kuroneko_fukuya)
+- note: [note.com/kuroneko_fukuya](https://note.com/kuroneko_fukuya)
 
 ## ご注意
 

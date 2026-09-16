@@ -7,7 +7,7 @@ description: らじぽけのプライバシーポリシーです。端末内に�
 
 らじぽけ（Radio Pocket）
 
-最終更新日: 2026年9月13日
+最終更新日: 2026年9月16日
 
 ---
 
@@ -199,11 +199,12 @@ Google における情報の取り扱いについては、以下をご確認く�
 
 本ポリシーおよび本アプリに関するお問い合わせは、以下までご連絡ください。
 
-**らじぽけ開発チーム**
+**黒猫福家本舗**
 
-- メール: radiopocket.jp@gmail.com
-- X: https://x.com/radiopocketjp
-- note: https://note.com/radiopocket
+- メール: [kuroneko.fukuya@gmail.com](mailto:kuroneko.fukuya@gmail.com)
+- YouTube: [@kuronekofukuyahonpo](https://www.youtube.com/@kuronekofukuyahonpo)
+- X: [@kuroneko_fukuya](https://x.com/kuroneko_fukuya)
+- note: [note.com/kuroneko_fukuya](https://note.com/kuroneko_fukuya)
 
 ---
 

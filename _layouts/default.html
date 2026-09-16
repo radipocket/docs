@@ -89,6 +89,16 @@
 
       </section>
       <footer>
+        {%- comment -%}
+          開発者の連絡先。**全ページの下に同じものが出る**ようにここへ置いた。
+          値は _config.yml の developer だけが持っている——ページごとに書くと、
+          変えたときに必ずどれかが古いまま残る。
+        {%- endcomment -%}
+        <p class="site-contact">
+          <strong>{{ site.developer.name }}</strong><br>
+          <a href="mailto:{{ site.developer.mail }}">{{ site.developer.mail }}</a><br>
+          {% for s in site.developer.socials %}<a href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.title }}</a>{% unless forloop.last %} ・ {% endunless %}{% endfor %}
+        </p>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}

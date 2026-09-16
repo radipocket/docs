@@ -87,6 +87,13 @@
          <a href="{{ '/privacy-policy.html' | relative_url }}">プライバシーポリシー</a> ・
          <a href="{{ '/roadmap.html' | relative_url }}">開発ロードマップ</a> ・
          <a href="{{ '/changelog.html' | relative_url }}">変更履歴</a></p>
+      <!-- 使い方は default.html を通らない（専用レイアウト）ので、連絡先もここに置く。
+           値は _config.yml の developer で、default.html のフッターと同じもの。 -->
+      <p class="site-contact">
+        <strong>{{ site.developer.name }}</strong> ・
+        <a href="mailto:{{ site.developer.mail }}">{{ site.developer.mail }}</a> ・
+        {% for s in site.developer.socials %}<a href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.title }}</a>{% unless forloop.last %} ・ {% endunless %}{% endfor %}
+      </p>
     </footer>
 
     <script src="{{ '/manual/manual.js' | relative_url }}"></script>
