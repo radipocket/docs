@@ -1,0 +1,58 @@
+{%- comment -%}
+  構造化データ（JSON-LD）。**ページの front matter に schema があるときだけ出す。**
+
+  - schema: Article            … 記事（articles/*.md）。headline / 日付 / 著者を出す
+  - schema: SoftwareApplication … アプリそのものの紹介（記事の一覧など）
+
+  著者・発行者の名前は _config.yml の developer.name から取る（ここに名前を書かない）。
+  文字列は jsonify で JSON として正しく引用する——手で "..." に入れると、本文の引用符で壊れる。
+{%- endcomment -%}
+{%- if page.schema == "Article" -%}
+{%- assign sd_image = page.image | default: site.og_image | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "image": [{{ sd_image | jsonify }}],
+  "datePublished": {{ page.date_published | jsonify }},
+  "dateModified": {{ page.date_modified | default: page.date_published | jsonify }},
+  "inLanguage": "ja",
+  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+  "author": {
+    "@type": "Organization",
+    "name": {{ site.developer.name | jsonify }},
+    "url": {{ "/" | absolute_url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.developer.name | jsonify }},
+    "url": {{ "/" | absolute_url | jsonify }}
+  }
+}
+</script>
+{%- elsif page.schema == "SoftwareApplication" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": {{ site.title | jsonify }},
+  "description": {{ page.description | default: site.description | jsonify }},
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "MultimediaApplication",
+  "inLanguage": "ja",
+  "url": {{ site.play_url | jsonify }},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": {{ site.developer.name | jsonify }},
+    "url": {{ "/" | absolute_url | jsonify }}
+  }
+}
+</script>
+{%- endif -%}

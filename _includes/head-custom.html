@@ -15,6 +15,23 @@ img[src*="images/"]{
   border-radius:8px;
 }
 
+/* 記事（articles/）の画面写真。**縦横の比は画像ごとに違う**（下を切った写真がある）ので、
+   上の images/ 用と違って aspect-ratio を決め打ちしない。Markdown で {: .shot} を付けた img だけに効く。 */
+img.shot{
+  display:block;
+  width:100%;
+  max-width:270px;
+  height:auto;
+  margin:0 auto 12px;
+  border:1px solid #e0e0e0;
+  border-radius:8px;
+}
+/* 記事の日付と、非公式である旨の注記。本文より控えめに。 */
+.article-meta,.article-note{
+  font-size:13px;
+  color:#666;
+}
+
 /* YouTube ショート（縦長 9:16）。**画面写真と同じ 270px に収める。**
    幅いっぱいに広げると、隣に並ぶ画面写真より 2.6 倍大きくなって釣り合わない。
    上の img[src*="images/"] は iframe には当たらないので、別に書く。

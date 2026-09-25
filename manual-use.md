@@ -1,4 +1,6 @@
 ---
+# 昔の URL を切らさないための案内ページ。検索エンジンの一覧（sitemap.xml）には載せない。
+sitemap: false
 title: 使い方（使いこなす）
 description: 使い方は1ページにまとまりました。このページは「使いこなす」の見出しへご案内します。
 redirect_anchor: 便利に使う

@@ -16,6 +16,11 @@ og_image: /images/ogp-1200x675.png
 og_image_alt: らじぽけの画面。左から、聴く・録る・あとで聴く。
 twitter_site: "@kuroneko_fukuya"
 
+# Google Play のらじぽけ。構造化データ（SoftwareApplication）の url に使う。
+# 記事から Play へのリンクは、流入元が分かるよう referrer（utm_*）を付けたものを
+# 記事ごとに書く（articles/_template.md を参照）。
+play_url: https://play.google.com/store/apps/details?id=ca.radipocket
+
 # 開発者（黒猫福家本舗）の連絡先。**ここだけに書く。**
 # フッター（_layouts/default.html と _layouts/manual.html）がこれを読んで、
 # 全ページの下に同じものを出す。ページ本文の「お問い合わせ」も同じ値を書くが、
@@ -48,6 +53,8 @@ nav:
     url: /
   - title: 使い方
     url: /manual.html
+  - title: 記事
+    url: /articles/
   - title: テスト参加
     url: /test.html
   - title: 開発ロードマップ

@@ -1,0 +1,29 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{%- comment -%}
+  検索エンジン向けの一覧。**プラグイン（jekyll-sitemap）は使わず、ここで組み立てる。**
+  どのページが載るかをこのファイルだけ読んで分かるようにするため。
+
+  載せるのは .html のページと、フォルダの入口（/ で終わるもの）だけ。
+  front matter に `sitemap: false` があるページは載せない
+  （昔の URL を切らさないための案内ページ manual-*.md など）。
+  lastmod は front matter の date_modified があるときだけ出す。
+{%- endcomment %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.pages | sort: "url" -%}
+{%- for p in pages -%}
+  {%- if p.sitemap == false -%}{%- continue -%}{%- endif -%}
+  {%- assign ext = p.url | slice: -5, 5 -%}
+  {%- assign last = p.url | slice: -1, 1 -%}
+  {%- unless ext == ".html" or last == "/" -%}{%- continue -%}{%- endunless %}
+  <url>
+    <loc>{{ p.url | absolute_url | xml_escape }}</loc>
+    {%- if p.date_modified %}
+    <lastmod>{{ p.date_modified | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endfor %}
+</urlset>
