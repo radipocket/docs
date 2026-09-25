@@ -72,6 +72,16 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 3. 上の表に1行足す。
 4. アプリからも開くなら、本体リポジトリの `AppLinks` に URL を足す。
 
+## SNS の投稿用の画像（posts/img/）
+
+X・Threads の自動投稿（本体の `scripts/marketing/`）で使う画像の置き場。
+**Threads の API は画像のファイルを受け取らず、公開された URL を読みに来る**ので、ここで公開している
+（`https://radipocket.github.io/docs/posts/img/<名前>.jpg`）。
+
+- **サイトのどのページからもリンクしない。** `sitemap.xml` は .html のページだけを載せるので、ここは載らない
+- 中身の決まり: 開発用の表示・試験のデータ・テスト広告・他社の番組表（放送予定）を写さない。写っていれば切る
+- JPEG（Threads が受け付ける形式）。元の置き場は OneDrive の `マーケ\投稿\img\`（同じファイル）
+
 ## 記事を足すとき（articles/）
 
 1. `articles/_template.md` を `articles/<英小文字とハイフンの名前>.md` に写して書く。
