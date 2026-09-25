@@ -1,4 +1,6 @@
 ---
+# 昔の URL を切らさないための案内ページ。検索エンジンの一覧（sitemap.xml）には載せない。
+sitemap: false
 title: 使い方（録る）
 description: 使い方は1ページにまとまりました。このページは「録る」の見出しへご案内します。
 redirect_anchor: 録る

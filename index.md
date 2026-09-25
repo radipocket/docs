@@ -149,6 +149,14 @@ Android 6.0 以降で動きます。
 
 ご参加いただいた方へのご案内（テスト期間中のプランの扱い）は、[クローズドテストのご案内](test.html) に残しています。
 
+## 記事
+
+ラジオ番組の録音や、聴き逃した番組をあとから聴く方法を、記事にまとめています。
+
+- [Android でラジオ番組を録音する方法](articles/record-radio-android.html)
+- [聴き逃したラジオ番組を、あとから聴くには](articles/catch-up-radio.html)
+- [記事の一覧](articles/)
+
 ## ご注意
 
 らじぽけは、**radiko の公式アプリではありません。** radiko を運営する会社とは関係がなく、個人が開発しているアプリです。radiko の名称、および番組・放送局に関する権利は、それぞれの権利者に帰属します。
@@ -166,4 +174,4 @@ Android 6.0 以降で動きます。
 
 ---
 
-[ホーム](index.html) ・ [使い方](manual.html) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
+[ホーム](index.html) ・ [使い方](manual.html) ・ [記事](articles/) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)

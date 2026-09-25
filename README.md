@@ -14,6 +14,10 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 | `manual-record.md` | https://radipocket.github.io/docs/manual-record.html （案内だけ） |
 | `manual-use.md` | https://radipocket.github.io/docs/manual-use.html （案内だけ） |
 | `manual-faq.md` | https://radipocket.github.io/docs/manual-faq.html （案内だけ） |
+| `articles/index.md` | https://radipocket.github.io/docs/articles/ （記事の一覧） |
+| `articles/record-radio-android.md` | https://radipocket.github.io/docs/articles/record-radio-android.html |
+| `articles/catch-up-radio.md` | https://radipocket.github.io/docs/articles/catch-up-radio.html |
+| `sitemap.xml` | https://radipocket.github.io/docs/sitemap.xml （検索エンジン向けの一覧） |
 
 ## 開発用のメモ（公開しません）
 
@@ -67,6 +71,19 @@ GitHub Pages で公開しています: https://radipocket.github.io/docs/
 2. `index.md` の一覧に1行足す。
 3. 上の表に1行足す。
 4. アプリからも開くなら、本体リポジトリの `AppLinks` に URL を足す。
+
+## 記事を足すとき（articles/）
+
+1. `articles/_template.md` を `articles/<英小文字とハイフンの名前>.md` に写して書く。
+   **`_` で始まるひな形は公開されない。** 書き方の決まり（他社名・日数・非公式の注記・
+   Play へのリンクの utm）は、ひな形の中に書いてある。
+2. 画面の写真は `articles/img/` に webp で置き、Markdown で `{: .shot}` を付ける。
+   テスト広告や開発用の表示が写っていないものを使う。
+3. 一覧（`articles/index.md`）と `sitemap.xml` は**自動で組み立てる**ので、直さなくてよい。
+   構造化データ（`_includes/structured-data.html`）も front matter の `schema` から出る。
+4. 上の表に1行足す。
+
+`sitemap.xml` に載せたくないページは、front matter に `sitemap: false` を書く。
 
 ## 冒頭の「最終更新日」は配信日に合わせる（2026-09-07 に追加）
 

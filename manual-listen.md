@@ -1,4 +1,6 @@
 ---
+# 昔の URL を切らさないための案内ページ。検索エンジンの一覧（sitemap.xml）には載せない。
+sitemap: false
 title: 使い方（聴く）
 description: 使い方は1ページにまとまりました。このページは「聴く」の見出しへご案内します。
 redirect_anchor: 聴く
