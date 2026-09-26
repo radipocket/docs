@@ -1,0 +1,77 @@
+# らじぽけの紹介動画（完パケ_v3 の13本・YouTube @kuronekofukuyahonpo）。
+#
+# **id が空の枠はサイトに出さない。** 公開の予約中・未公開の動画は id を空のままにする
+# （予約中の動画は、公開されるまでだれも見られないので、出すと壊れた枠になる）。
+#
+# 新しく公開されたら id（watch?v= / shorts/ のうしろの11文字）を入れるだけで、置いてあるページに出る。
+# 公開されたかは、チャンネルの公開の RSS で確かめる（公開済みの動画だけが載る）:
+#   https://www.youtube.com/feeds/videos.xml?channel_id=UCVvXm39QMWwSx1ZFV5MDZ6w
+#
+# thumb は videos/img/ のファイル（完パケ_v3 のサムネイルを縮めたもの）。**押すまで YouTube からは何も読まない。**
+# shape: wide（横長 16:9 のまま再生）／ tall（ショート。押したら縦長 9:16 で再生）
+
+long:
+  title: "らじぽけのある1日｜ラジオを録って、あとで聴く"
+  id: "62HGLvZczsM"
+  shape: wide
+  thumb: long.jpg
+teaser_h:
+  title: "らじぽけ｜ラジオを録って、あとで聴く"
+  id: ""
+  shape: wide
+  thumb: teaser_h.jpg
+teaser_v:
+  title: "らじぽけ｜ラジオを録って、あとで聴く"
+  id: ""
+  shape: tall
+  thumb: teaser_v.jpg
+short01:
+  title: "聴き逃した番組、あとからでも｜らじぽけ"
+  id: "5zdabOETwnk"
+  shape: tall
+  thumb: short01.jpg
+short02:
+  title: "気になる番組を、もっと楽しむ｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short02.jpg
+short03:
+  title: "ボタンひとつで、番組を手元に｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short03.jpg
+short04:
+  title: "聴きたいところを、すぐ聴ける｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short04.jpg
+short05:
+  title: "いま放送中のラジオを、すぐに｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short05.jpg
+short06:
+  title: "好きな番組を、聴き逃さない｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short06.jpg
+short07:
+  title: "ラジオで流れた曲が、わかる｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short07.jpg
+short08:
+  title: "朝はラジオで、すっきり目覚める｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short08.jpg
+short09:
+  title: "自分に合わせて、使いやすく｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short09.jpg
+short10:
+  title: "はじめてでも、すぐ使える｜らじぽけ"
+  id: ""
+  shape: tall
+  thumb: short10.jpg

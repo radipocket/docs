@@ -50,6 +50,33 @@ img.shot{
   border-radius:8px;
 }
 
+/* 紹介動画（_includes/video.html）。**押すまで YouTube を読み込まない**——最初はこのサイトの
+   サムネイルと再生の印だけ。押したら下のスクリプトが youtube-nocookie.com の埋め込みに差し替える。
+   サムネイルは横長（16:9）。ショートは押したら縦長（9:16・270px）にする（画面写真と同じ幅）。 */
+.yt-lazy{margin:0 auto 16px;max-width:500px}
+.yt-lazy .yt-open{
+  position:relative;display:block;width:100%;padding:0;border:0;background:#000;
+  border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;
+}
+.yt-lazy .yt-open img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  max-width:none;margin:0;border:0;border-radius:0;aspect-ratio:auto;
+}
+.yt-lazy .yt-play{
+  position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;
+  background:rgba(33,33,33,.85);border-radius:12px;
+}
+.yt-lazy .yt-play::after{
+  content:"";position:absolute;left:27px;top:14px;
+  border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;
+}
+.yt-lazy .yt-open:hover .yt-play,.yt-lazy .yt-open:focus .yt-play{background:#f00}
+.yt-lazy iframe{display:block;width:100%;height:100%;border:0;border-radius:8px}
+.yt-lazy.yt-playing{aspect-ratio:16/9}
+.yt-lazy.yt-tall.yt-playing{max-width:270px;aspect-ratio:9/16}
+.yt-caption{font-size:13px;color:#666;margin:6px 0 0;text-align:center}
+.yt-lazy.yt-playing .yt-caption{display:none}
+
 /* 料金の表は4列ある。狭い画面では、まず折り返して収める。
    nowrap にすると横スクロールになり、いちばん右の「プレミアム」が
    隠れてしまう。料金表で上位プランが見えないのは困る。
@@ -115,3 +142,21 @@ section td:first-child{white-space:nowrap}
   margin-top:8px;
 }
 </style>
+<script>
+/* 紹介動画: 押したときだけ youtube-nocookie.com の埋め込みに差し替える（_includes/video.html）。 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest ? e.target.closest('.yt-lazy .yt-open') : null;
+  if (!btn) return;
+  var box = btn.parentNode;
+  var id = box.getAttribute('data-id');
+  if (!/^[\w-]{11}$/.test(id)) return;
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+  f.title = box.getAttribute('data-title') || 'YouTube';
+  f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; web-share');
+  f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+  f.setAttribute('allowfullscreen', '');
+  box.classList.add('yt-playing');
+  box.replaceChild(f, btn);
+});
+</script>

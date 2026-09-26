@@ -1,0 +1,18 @@
+{%- comment -%}
+  紹介動画を1本出す。使い方: {% include video.html key="long" %}
+
+  - 中身は _data/videos.yml の key の行。**id が空なら何も出さない**（予約中・未公開の動画）
+  - **押すまで YouTube から何も読まない。** 最初はこのサイトに置いたサムネイル（videos/img/）と再生の印だけ。
+    押したら youtube-nocookie.com の埋め込みに差し替える（差し替えは head-custom.html の小さなスクリプト）
+  - ショート（shape: tall）は、押したら縦長（9:16）で再生する
+{%- endcomment -%}
+{%- assign v = site.data.videos[include.key] -%}
+{%- if v and v.id and v.id != "" -%}
+<div class="yt-lazy yt-{{ v.shape | default: 'wide' }}" data-id="{{ v.id }}" data-title="{{ v.title | escape }}">
+  <button type="button" class="yt-open" aria-label="動画を再生する: {{ v.title | escape }}">
+    <img src="{{ '/videos/img/' | append: v.thumb | relative_url }}" alt="{{ v.title | escape }}" width="960" height="540" loading="lazy" decoding="async">
+    <span class="yt-play" aria-hidden="true"></span>
+  </button>
+  <p class="yt-caption">{{ v.title | escape }}（YouTube）</p>
+</div>
+{%- endif -%}
