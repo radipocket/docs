@@ -7,7 +7,7 @@ description: らじぽけのプライバシーポリシーです。端末内に�
 
 らじぽけ（Radio Pocket）
 
-最終更新日: 2026年9月16日
+最終更新日: 2026年9月27日
 
 ---
 
@@ -130,6 +130,50 @@ Google における情報の取り扱いについては、以下をご確認く�
 
 ---
 
+## YouTube API サービスについて {#youtube-api}
+
+**らじぽけのアプリ本体は、YouTube API サービスを使っていません。**アプリから YouTube のデータを読んだり、利用者の YouTube アカウントにつないだりすることはありません。
+
+YouTube API サービスを使うのは、黒猫福家本舗が自分たちの YouTube チャンネル（[@kuronekofukuyahonpo](https://www.youtube.com/@kuronekofukuyahonpo)）に、らじぽけの紹介動画を上げるための投稿の道具だけです。この道具は黒猫福家本舗の手元のパソコンで動かすもので、一般の利用者に配ったり、公開したりはしていません。
+
+この道具は YouTube API サービスを使っています。YouTube API サービスを通じて扱う情報は、Google のプライバシーポリシーの対象にもなります。
+
+- Google のプライバシーポリシー: [http://www.google.com/policies/privacy](http://www.google.com/policies/privacy)
+- YouTube の利用規約: [https://www.youtube.com/t/terms](https://www.youtube.com/t/terms)
+
+### 扱う情報
+
+この道具が YouTube API サービスを通じて読むのは、黒猫福家本舗のチャンネルの次の情報だけです。
+
+- チャンネルの ID・名前・アップロードした動画の一覧
+- アップロードした動画の題（同じ動画を二重に上げないように、題を比べるため）
+
+この道具が YouTube へ送るのは、黒猫福家本舗が作った紹介動画と、その題・説明・タグ・公開の設定です。
+
+### 扱わない情報
+
+- ほかの人のチャンネル・動画・コメント・再生の記録などは、読みません
+- YouTube のデータを分析したり、第三者に渡したり、売ったりはしません
+- らじぽけのアプリの利用者の情報を、YouTube へ送ることはありません
+
+### 保存と共有
+
+- 黒猫福家本舗の手元のパソコンに、作業の記録（チャンネルの名前と、上げた動画の題と URL）を残します。外部には送りません
+- YouTube につなぐための許可の情報（更新トークン）は、同じパソコンの中の、公開していないファイルに保存します
+- 広告の配信や、クッキーなどで端末の情報を集めることは、この道具では行いません
+
+### 許可の取り消し
+
+この道具への許可は、Google アカウントのセキュリティの設定の「サードパーティのアクセス」の画面から、いつでも取り消せます。
+
+- [https://security.google.com/settings/security/permissions](https://security.google.com/settings/security/permissions)
+
+取り消したあとは、この道具は YouTube につなげません。
+
+この節についてのお問い合わせは、下の「お問い合わせ」の連絡先までお送りください。
+
+---
+
 ## 収集しない情報
 
 本アプリは、以下の情報を収集しません。
@@ -208,4 +252,4 @@ Google における情報の取り扱いについては、以下をご確認く�
 
 ---
 
-[ホーム](index.html) ・ [使い方](manual.html) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
+[ホーム](index.html) ・ [使い方](manual.html) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [利用規約](terms.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)

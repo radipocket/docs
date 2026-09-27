@@ -176,4 +176,4 @@ Android 6.0 以降で動きます。
 
 ---
 
-[ホーム](index.html) ・ [使い方](manual.html) ・ [記事](articles/) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
+[ホーム](index.html) ・ [使い方](manual.html) ・ [記事](articles/) ・ [クローズドテスト](test.html) ・ [プライバシーポリシー](privacy-policy.html) ・ [利用規約](terms.html) ・ [開発ロードマップ](roadmap.html) ・ [変更履歴](changelog.html)
