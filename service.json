@@ -1,7 +1,8 @@
 {
   "version": 1,
-  "updated": "2026-10-02T17:48:00+09:00",
+  "updated": "2026-10-03T14:33:00+09:00",
   "service": {
-    "recording_stopped": 0
+    "recording_stopped": 0,
+    "radiru_recording_stopped": 0
   }
 }
