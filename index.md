@@ -168,6 +168,17 @@ Android 7.0 以降で動きます。
 
 **黒猫福家本舗**
 
+### LINE でのお問い合わせ
+
+黒猫福家本舗の LINE アカウントで、らじぽけのご質問を受け付けています。AI が答えています。担当（人）に代わるときは、そうお伝えします。
+
+- 友だち追加: [https://line.me/R/ti/p/%40690yokig](https://line.me/R/ti/p/%40690yokig)
+- [LINE でのお問い合わせのプライバシーポリシー](https://kuroneko-line.kuroneko-fukuya.workers.dev/privacy)
+
+### そのほか
+
+アプリの中の「意見箱」（Google フォーム）からも、ご意見・ご要望を名前を出さずにお送りいただけます。
+
 - メール: [kuroneko.fukuya@gmail.com](mailto:kuroneko.fukuya@gmail.com)
 - YouTube: [@kuronekofukuyahonpo](https://www.youtube.com/@kuronekofukuyahonpo)
 - X: [@kuroneko_fukuya](https://x.com/kuroneko_fukuya)
