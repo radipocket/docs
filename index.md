@@ -170,7 +170,7 @@ Android 7.0 以降で動きます。
 
 ### LINE でのお問い合わせ
 
-黒猫福家本舗の LINE アカウントで、らじぽけのご質問を受け付けています。AI が答えています。担当（人）に代わるときは、そうお伝えします。
+黒猫福家本舗の LINE アカウントで、らじぽけのご質問を受け付けています。AI が答えています。担当（人）に代わるときは、そうお伝えします。アプリの 設定 →「情報とサポート」→「LINE で問い合わせる」からも開けます。
 
 - 友だち追加: [https://line.me/R/ti/p/%40690yokig](https://line.me/R/ti/p/%40690yokig)
 - [LINE でのお問い合わせのプライバシーポリシー](https://kuroneko-line.kuroneko-fukuya.workers.dev/privacy)
