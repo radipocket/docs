@@ -15,6 +15,16 @@ long:
   id: "62HGLvZczsM"
   shape: wide
   thumb: long.jpg
+feature_full:
+  title: "らじぽけ 機能のすべて｜ラジオを番組表から録って、あとで聴く Android アプリ"
+  id: "U9h4ND9EEu0"   # 機能紹介の全体版（13:06・2026-11-01 公開）
+  shape: wide
+  thumb: feature_full.jpg
+feature_analysis:
+  title: "ラジオで昨日いちばん流れた曲が分かる｜らじぽけの「分析」を 3 分で紹介"
+  id: "uHhrxklnMKQ"   # 機能紹介の分析だけの版（2:53・2026-11-01 公開）
+  shape: wide
+  thumb: feature_analysis.jpg
 teaser_h:
   title: "らじぽけ｜ラジオを録って、あとで聴く"
   id: "iAh02WRZ4hQ"   # Play のプロモーション動画にも使う（RP-070）。いまはどのページにも置いていない

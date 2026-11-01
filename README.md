@@ -86,10 +86,10 @@ X・Threads の自動投稿（本体の `scripts/marketing/`）で使う画像�
 
 YouTube（@kuronekofukuyahonpo）に上げた紹介動画を、**押すまで YouTube を読み込まない形**で出す。
 
-- 動画の一覧は `_data/videos.yml` の1か所だけ。枠（long・teaser_h・teaser_v・short01〜10）ごとに題・id・形・サムネイル
+- 動画の一覧は `_data/videos.yml` の1か所だけ。枠（long・feature_full・feature_analysis・teaser_h・teaser_v・short01〜10）ごとに題・id・形・サムネイル
 - ページには `{% raw %}{% include video.html key="long" %}{% endraw %}` と書く。**id が空の枠は何も出ない**（公開の予約中・未公開の動画は id を空のままにする）
 - 最初はこのサイトの `videos/img/<枠>.jpg`（完パケ_v3 のサムネイルを縮めたもの）と再生の印だけ。押したら `youtube-nocookie.com` の埋め込みに差し替える（`_includes/head-custom.html` の小さなスクリプト）
-- いま置いている場所: トップ（long）・「聴き逃したラジオ番組を、あとから聴くには」（short01）・「Android でラジオ番組を録音する方法」（short03）
+- いま置いている場所: トップ（long・feature_full・feature_analysis）・「聴き逃したラジオ番組を、あとから聴くには」（short01）・「Android でラジオ番組を録音する方法」（short03）
 - **新しく公開されたら**: チャンネルの公開の RSS（`https://www.youtube.com/feeds/videos.xml?channel_id=UCVvXm39QMWwSx1ZFV5MDZ6w`）で公開済みか確かめ、その枠の id を入れる（予約中の動画は RSS に出ない）
 
 ## 記事を足すとき（articles/）
