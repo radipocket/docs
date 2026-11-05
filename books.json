@@ -766,6 +766,8 @@
    "kindle_unlimited": true,
    "sample": "https://radipocket.github.io/docs/books/b40.json",
    "sample_percent": 9.0,
+   "audio": "https://radipocket.github.io/docs/books/audio/b40.mp3",
+   "audio_seconds": 406,
    "author": "五分読光輝",
    "publisher": "黒猫福家本舗",
    "hook": "「もっと時間があれば」。",
@@ -1033,6 +1035,7 @@
   "kindle_button": "Kindle で続きを読む",
   "shelf_end": "黒猫福家本舗の本棚には、5 分で聴ける本が 53 冊あります",
   "settings_label": "黒猫福家本舗の本のお知らせ",
-  "blurb_head": "この本について"
+  "blurb_head": "この本について",
+  "voice_credit": "音声：VOICEVOX:青山龍星"
  }
 }
